@@ -1,6 +1,3 @@
-use std::collections::HashMap;
-use std::collections::HashSet;
-
 /* =============================== Arrays and strings ===============================
 Assumptions:
 Assume all input string use standard ASCII characters.
@@ -18,7 +15,7 @@ pub fn is_unique(string: &str) -> bool {
     let mut bit_vector = 0u128;
     for &byte in string.as_bytes() {
         let mask = 1u128 << byte;
-        if (bit_vector & mask) != 0 {
+        if bit_vector & mask != 0 {
             return false;
         }
         bit_vector |= mask;
@@ -28,7 +25,7 @@ pub fn is_unique(string: &str) -> bool {
 
 /* Function that returns true if string s1 is permutation of s2 and false if not.
 If both strings are empty, the function returns true.
-Time: O(N), Space: O(N)
+Time: O(N), Space: O(1)
 */
 pub fn check_permutation(s1: &str, s2: &str) -> bool {
     if s1.len() != s2.len() || !s1.is_ascii() || !s2.is_ascii() {
