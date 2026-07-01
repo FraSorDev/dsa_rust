@@ -7,3 +7,4 @@ edition = "2024"
 doctest = false
 
 [dependencies]
+ascii = "1.1.0"
